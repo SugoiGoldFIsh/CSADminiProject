@@ -1,0 +1,143 @@
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 675px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+      width: 20%
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+      display: none;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+                .row.content {height:auto;}
+    }
+    
+    #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+      
+      #pac-input { 
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 0px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px; 
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+      #middle {height:100%; width: 100%; position: relative;}
+      #well {width: 100%;}
+      .well{ padding: 0; border: none;}
+      #Side-Nav{ 
+          width: 0%;
+          display: none;
+      }
+      #Side-Nav-Button {
+          position: absolute;
+          border-radius: 12px;
+      }
+      #Close-Nav-Button {
+          position: absolute;
+          border-radius: 12px;
+      }
+      #middle #Side-Nav-Button {
+          top: 93%;
+          left: 85%;
+      }
+      #middle #Close-Nav-Button {
+          top: 88%;
+          left: 85%;
+      }
+      #unorderedlist{
+          color: black;
+          font-family: A;
+          font-size: 20px;
+      }
+      #disp{
+          display: block;
+          font-family: A;
+          font-size: 20px;
+      }
+      #well{
+          background-color: white;
+          padding: 10px;
+      }
+      .Rating-container{
+          width: 100px;
+          background: #111;
+          padding: 20px 30px;
+          border: 1px solid #444;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+      }
+
