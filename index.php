@@ -60,15 +60,14 @@
         <Button id="Close-Nav-Button" onclick="closeNav()">Close Sidebar</Button>
         <script>
             function openNav(){
-                if (document.getElementById("Side-Nav").style.display="block") {
+                    document.getElementById("middle").style.width= "80%";
+                    document.getElementById("Side-Nav").style.width= "20%";
+                    document.getElementById("Side-Nav").style.display= "block";
+                }
+            function closeNav() {
                     document.getElementById("middle").style.width= "100%";
                     document.getElementById("Side-Nav").style.width= "0%";
                     document.getElementById("Side-Nav").style.display= "none";
-                }
-                if (document.getElementById("Side-Nav").style.display= "none") {
-                document.getElementById("middle").style.width= "80%";
-                document.getElementById("Side-Nav").style.width= "20%";
-                document.getElementById("Side-Nav").style.display= "block";
             }
         </script>
         <script>
