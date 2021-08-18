@@ -74,7 +74,7 @@ if (isset($_POST['login_user'])) {
           $_SESSION['email'] = $values['email'];
           $_SESSION['feedback'] = $values['feedback'];
   	  $_SESSION['success'] = "You are now logged in";
-  	  //header('location: index.php');
+  	  header('location: index.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}
