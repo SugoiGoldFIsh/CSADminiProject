@@ -169,15 +169,15 @@
               <div class="star-widget">
                   <form action="index.php" method="post">
                   <p id="RateUs" class="RateUs">Rate Our Website!</p>
-                  <input type="radio" name="rate5" id="rate-5">
+                  <input type="radio" name="rate" id="rate-5">
                   <label for="rate-5" class="fas fa-star"></label>
-                  <input type="radio" name="rate4" id="rate-4">
+                  <input type="radio" name="rate" id="rate-4">
                   <label for="rate-4" class="fas fa-star"></label>
-                  <input type="radio" name="rate3" id="rate-3">
+                  <input type="radio" name="rate" id="rate-3">
                   <label for="rate-3" class="fas fa-star"></label>
-                  <input type="radio" name="rate2" id="rate-2">
+                  <input type="radio" name="rate" id="rate-2">
                   <label for="rate-2" class="fas fa-star"></label>
-                  <input type="radio" name="rate1" id="rate-1">
+                  <input type="radio" name="rate" id="rate-1">
                   <label for="rate-1" class="fas fa-star"></label>
                   <div id="Rating-form" class="Rating-form">
                     <header></header>
