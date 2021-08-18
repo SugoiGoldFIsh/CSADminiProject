@@ -71,6 +71,7 @@ if (isset($_POST['login_user'])) {
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
           $_SESSION['email'] = mysqli_fetch_array($results)['email'];
+          $_SESSION['feedback'] = mysqli_fetch_array($results)['feedback'];
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	}else {
@@ -80,11 +81,18 @@ if (isset($_POST['login_user'])) {
 }
 if (isset($_POST['feedback_submit'])) {
         $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
-        $_SESSION['username'] = $username;
-  	$query_feedback = "INSERT INTO users WHERE username='$username' (feedback) VALUES('$feedback')";
+        $username = $_SESSION['username'];
+  	$query_feedback = "UPDATE users SET feedback = '$feedback' WHERE username='$username'";
           mysqli_query($db, $query_feedback);
   	}else {
   		array_push($errors, "Please login");
 }
 
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+        unset($_SESSION['email']);
+        unset($_SESSION['feedback']);
+  	header("location: index.php");
+  }
 ?>

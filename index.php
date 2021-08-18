@@ -1,13 +1,5 @@
 
-<?php 
-  session_start(); 
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-        unset($_SESSION['email']);
-  	header("location: index.php");
-  }
-  ?>
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
