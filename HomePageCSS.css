@@ -4,6 +4,9 @@
       margin-bottom: 0;
       border-radius: 0;
     }
+
+    /* Hide search bar when map not loaded */
+    .container-fluid.text-center>#pac-input {display:none;} 
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 675px}
