@@ -84,12 +84,12 @@
       #pac-input:focus {
         border-color: #4d90fe;
       }
-      #middle {height:100%; width: 100%; position: relative;}
+      #middle {height:100%; width: 80%; position: relative;}
       #well {width: 100%;}
       .well{ padding: 0; border: none;}
       #Side-Nav{ 
-          width: 0%;
-          display: none;
+          width: 20%;
+          display: block;
       }
       #Side-Nav-Button {
           position: absolute;
