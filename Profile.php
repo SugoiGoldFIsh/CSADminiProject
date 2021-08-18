@@ -1,11 +1,6 @@
 
 <?php 
-  session_start(); 
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: index.php");
-  }
+include ('server.php');
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,14 +149,14 @@
   
 <div class="container-fluid text-center">
 <h1 style="text-align:left; text-decoration: black; text-transform: capitalize;"> Welcome <?php echo $_SESSION['username']; ?></h1></br>
-<p style="text-align:left; text-transform: capitalize; border:">Email: <?php echo $_SESSION['email']?></p></br>
+<img id="user" src="ImageFolder/user.png" style =" height: 120px; width:120px; float: left" >
 
 <table class="profile">
     <tr><td><p style="text-align:left; text-transform: capitalize;">Username: <?php echo $_SESSION['username']?></td></tr>
     <tr><td><p style="text-align:left; ">Email: <?php echo $_SESSION['email']?></p></br></td></tr>
     <tr><td><p style="text-align:left; ">Previous Feedback: <?php echo $_SESSION['feedback']?></p></br></td></tr>
 </table>  
-   <p style="color: red; text-align: left; background: transparent; border: 1px solid #B0C4DE; width: 5%;" ><a href="index.php?logout='1'">logout</a> </p>
+   <p style="color: red; text-align: left; background: transparent; border: 2px solid #B0C4DE; width: 5%; font-weight:Bold ;"><a href="index.php?logout='1'">logout</a> </p>
 </div>
 
 <footer class="container-fluid text-center">
