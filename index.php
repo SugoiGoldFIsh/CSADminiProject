@@ -159,7 +159,7 @@
     <div id="Side-Nav" class="col-sm-2 sidenav">
         <div class="well" id="well">
             <img id="MRTImage" src="ImageFolder/BlankImage.jpg" style =" height: auto; width: 100%" >
-          <br><br>
+            <br><br>
           <ul id="unorderedlist">
               <li>Latitude: <span id="lat"></span></li>
               <li>Longitude: <span id="lon"></span> </li>
@@ -169,6 +169,7 @@
           <br>
           <div class="Rating-container">
               <div class="star-widget">
+                  <form action="index.php" method="post">
                   <p id="RateUs" class="RateUs">Rate Our Website!</p>
                   <input type="radio" name="rate" id="rate-5">
                   <label for="rate-5" class="fas fa-star"></label>
@@ -180,7 +181,7 @@
                   <label for="rate-2" class="fas fa-star"></label>
                   <input type="radio" name="rate" id="rate-1">
                   <label for="rate-1" class="fas fa-star"></label>
-                  <form action="index.php" method="post">
+                  <div id="Rating-form" class="Rating-form">
                     <header></header>
                   <div class="textarea">
                     <textarea cols="30" name="feedback" placeholder="Describe your experience.."></textarea>
@@ -189,9 +190,10 @@
                       <?php  if (isset($_SESSION['username'])) : ?>
             <button type="submit" onclick="Thankfeedback()" name="feedback_submit">Post</button>
             <?php else: ?>
-            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Please login</a></li>
+            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Please login to rate</a></li>
           <?php endif ?>
             <!-- <button type="submit" onclick="Thankfeedback()" name="feedback_submit">Post</button>-->
+                  </div>
                   </div>
                 </form>
               </div>

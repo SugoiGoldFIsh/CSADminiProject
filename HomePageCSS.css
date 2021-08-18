@@ -128,7 +128,7 @@
         position: relative;
         width: 100%;
         background: #D3D3D3;
-        padding: 5px 5px;
+        padding: 0px 5px 0px 5px;
         border: 1px solid #444;
         border-radius: 5px;
         display: flex;
@@ -177,36 +177,36 @@
         color: #fe7;
         text-shadow: 0 0 20px #952;
       }
-      #rate-1:checked ~ form header:before{
+      #rate-1:checked ~ .Rating-form header:before{
         content: " hate it ";
       }
-      #rate-2:checked ~ form header:before{
+      #rate-2:checked ~ .Rating-form header:before{
         content: " don't like it ";
       }
-      #rate-3:checked ~ form header:before{
+      #rate-3:checked ~ .Rating-form header:before{
         content: " It's ok... ";
       }
-      #rate-4:checked ~ form header:before{
+      #rate-4:checked ~ .Rating-form header:before{
         content: " like it! ";
       }
-      #rate-5:checked ~ form header:before{
+      #rate-5:checked ~ .Rating-form header:before{
         content: " love it! ";
       }
-      .Rating-container form{ /*so form does not appear at first*/
-        display: none;
+      .Rating-container Rating-form{ /*so form does not appear at first*/
+          display: block;
       }
-      input:checked ~ form{ /*allows form to appear after star is picked*/
-        display: block;
-      }
+      input:checked ~ Rating-form{ /*allows form to appear after star is picked*/
+          display: block;
+      } 
       input:checked ~ p{
-          display: none;
+          display: block;
       }
       form header{
         width: 100%;
         font-size: 25px;
         color: #fe7;
         font-weight: 500;
-        margin: 5px 0 20px 0;
+        margin: 5px 0 5px 0;
         text-align: center;
         transition: all 0.2s ease;
       }
@@ -230,7 +230,7 @@
       form .Post-btn{
         height: 45px;
         width: 100%;
-        margin: 15px 0;
+        margin: 10px 0px 0px 0px;
       }
       form .Post-btn button{
         height: 100%;
@@ -245,10 +245,15 @@
       form .Post-btn button:hover{
         background: #1b1b1b;
       }
+      form {
+          display: block;
+          margin-bottom: 0em;
+      }
       #RateUs {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 400;
           font-size: 100%;
+          margin: 5px 0px 0px 0px;
       }
 
