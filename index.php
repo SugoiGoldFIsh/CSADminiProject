@@ -102,7 +102,7 @@
                         var SerangoonMRTTime = 10;
                         if (SerangoondLat < 0.00005 && SerangoondLong < 0.00005) {
                             disp.textContent = "Next MRT arrival : "+ SerangoonMRTTime +" minutes";
-                            document.getElementById("MRTImage").src="DoverMRT.jpg";
+                            document.getElementById("MRTImage").src="ImageFolder/DoverMRT.jpg";
                         } else {
                             disp.textContent = "Click on an MRT station for arrival timing!";
                         }
