@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="stationsLatLong.js"></script>
 </head>
 <body>
 
@@ -61,6 +62,17 @@
             }
         </script>
         <script>
+          var stations = {};
+          function getMRTtime(code) {
+            if (!stations[code] || stations[code] < 1) stations[code] = Math.round(Math.random()*15); 
+            stations[code] += Math.round(Math.random()*1-0.9);
+            return stations[code];
+          }
+          function getDistance(lat1, long1, lat2, long2) {
+              var dLat = Math.abs(lat1 - lat2);
+              var dLong = Math.abs(long1 - long2);
+              return dLat + dLong;
+          }
             function initAutocomplete() {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: 1.3567845767409195, lng: 103.85218546345484},
@@ -85,14 +97,27 @@
                         //Store latitude and longitude into variable
                         Latitude = event.latLng.lat();
                         Longitude = event.latLng.lng();
-                        
-                        var SerangoondLat = Math.abs(1.3499488990593538 - Latitude);
-                        var SerangoondLong = Math.abs(103.87345790863037 - Longitude);
-                        var SerangoonMRTTime = 10;
-                        if (SerangoondLat < 0.00005 && SerangoondLong < 0.00005) {
-                            disp.textContent = "Next MRT arrival : "+ SerangoonMRTTime +" minutes";
+
+                        var minDist = Infinity;
+                        var closestStation;
+                        for (station of stationsLatLong) {
+                          var dist = getDistance(station.lat, station.long, Latitude, Longitude);
+                          if (dist < minDist) {
+                            minDist = dist;
+                            closestStation = station;
+                          }
+                        }
+                        console.log(minDist)
+                        //serangoon: 1.3499488990593538, 103.87345790863037
+                        //var SerangoonMRTTime = 10;
+                        //var SerangoonDistance = getDistance(1.3499488, 103.87345, Latitude, Longitude);
+                        var time = getMRTtime(closestStation.code)
+                        if (minDist < 0.002) {
+                            dispSt.textContent = closestStation.name;
+                            disp.textContent = "Next MRT arrival : "+ time +" minutes";
                             document.getElementById("MRTImage").src="ImageFolder/DoverMRT.jpg";
                         } else {
+                            dispSt.textContent = "";
                             disp.textContent = "Click on an MRT station for arrival timing!";
                             document.getElementById("MRTImage").src="ImageFolder/BlankImage.jpg";
                         }
@@ -163,6 +188,7 @@
               <li>Longitude: <span id="lon"></span> </li>
           </ul>
           <br>
+          <span id="dispSt"></span>
           <span id="disp">Click on an MRT for arrival timing!</span>
           <br>
           <div class="Rating-container">
