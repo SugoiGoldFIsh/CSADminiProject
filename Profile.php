@@ -157,9 +157,9 @@
 <p style="text-align:left; text-transform: capitalize; border:">Email: <?php echo $_SESSION['email']?></p></br>
 
 <table class="profile">
-    <tr><td><p style="text-align:left; text-transform: capitalize;">Username: <?php echo $_SESSION['username']?></td></tr>
-    <tr><td><p style="text-align:left; ">Email: <?php echo $_SESSION['email']?></p></br></td></tr>
-    <tr><td><p style="text-align:left; ">Previous Feedback: <?php echo $_SESSION['feedback']?></p></br></td></tr>
+    <tr><td><span style="text-align:left; text-transform: capitalize;">Username:</span></td><td><?php echo $_SESSION['username']?></td></tr>
+    <tr><td><span style="text-align:left; ">Email:</span></td><td><?php echo $_SESSION['email']?></td></tr>
+    <tr><td><span style="text-align:left; ">Previous Feedback:</span></td><td><?php echo $_SESSION['feedback']?></br></td></tr>
 </table>  
    <p style="color: red; text-align: left; background: transparent; border: 1px solid #B0C4DE; width: 5%;" ><a href="index.php?logout='1'">logout</a> </p>
 </div>
