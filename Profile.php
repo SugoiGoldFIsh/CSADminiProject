@@ -150,12 +150,13 @@ include ('server.php');
         <h1 style="text-align:left; text-decoration: black; text-transform: capitalize;"> Welcome, <?php echo $_SESSION['username']; ?></h1>
 <table class="profile">
     <tr><td rowspan="4"><img id="user" src="ImageFolder/user.png" style =" height: 120px; width:120px; float: left" ></td></td></tr>
-    <tr><td class="data-label" style="text-transform: capitalize;">Username:</td><td class="data-value"><?php echo $_SESSION['username']?></td></tr>
+    <tr><td class="data-label" style="text-transform: capitalize;">Username:</td><td class="data-value" style="text-transform: capitalize;"><?php echo $_SESSION['username']?></td></tr>
     <tr><td class="data-label">Email:</td><td class="data-value"><?php echo $_SESSION['email']?></td></tr>
     <tr><td class="data-label">Previous&nbsp;Feedback:</td><td class="data-value"><?php echo $_SESSION['feedback']?></br></td></tr>
 </table>  
         
         <p style="text-align: left; margin-top: 1em;"> <span style="color: red;  padding:0.1em; background: transparent; border: 2px solid #B0C4DE; font-weight:Bold ;"><a href="index.php?logout='1'">Log out</a> </span></p>
+        <p style="text-align: left; margin-top: 1em;"> <span style="color: red;  padding:0.1em; background: transparent; border: 2px solid #B0C4DE; font-weight:Bold ;"><a href="changepsw.php">Change Password</a> </span></p>
 </div>
 
 <footer class="container-fluid text-center">
