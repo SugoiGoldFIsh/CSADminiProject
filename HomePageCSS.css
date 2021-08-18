@@ -192,10 +192,10 @@
       #rate-5:checked ~ .Rating-form header:before{
         content: " love it! ";
       }
-      .Rating-container Rating-form{ /*so form does not appear at first*/
-          display: block;
+      .Rating-container .Rating-form{ /*so form does not appear at first*/
+          display: none;
       }
-      input:checked ~ Rating-form{ /*allows form to appear after star is picked*/
+      input:checked ~ .Rating-form{ /*allows form to appear after star is picked*/
           display: block;
       } 
       input:checked ~ p{
