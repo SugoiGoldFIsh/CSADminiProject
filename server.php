@@ -78,5 +78,13 @@ if (isset($_POST['login_user'])) {
   	}
   }
 }
+if (isset($_POST['feedback_submit'])) {
+        $feedback = mysqli_real_escape_string($db, $_POST['feedback']);
+        $_SESSION['username'] = $username;
+  	$query_feedback = "INSERT INTO users WHERE username='$username' (feedback) VALUES('$feedback')";
+          mysqli_query($db, $query_feedback);
+  	}else {
+  		array_push($errors, "Please login");
+}
 
 ?>

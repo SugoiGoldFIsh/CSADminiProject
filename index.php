@@ -188,13 +188,18 @@
                   <label for="rate-2" class="fas fa-star"></label>
                   <input type="radio" name="rate" id="rate-1">
                   <label for="rate-1" class="fas fa-star"></label>
-                  <form action="#" method="post">
+                  <form action="index.php" method="post">
                     <header></header>
                   <div class="textarea">
-                    <textarea cols="30" placeholder="Describe your experience.."></textarea>
+                    <textarea cols="30" name="feedback" placeholder="Describe your experience.."></textarea>
                   </div>
                   <div class="Post-btn">
-                      <button type="submit" onclick="Thankfeedback()">Post</button>
+                      <?php  if (isset($_SESSION['username'])) : ?>
+            <button type="submit" onclick="Thankfeedback()" name="feedback_submit">Post</button>
+            <?php else: ?>
+            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Please login</a></li>
+          <?php endif ?>
+            <!-- <button type="submit" onclick="Thankfeedback()" name="feedback_submit">Post</button>-->
                   </div>
                 </form>
               </div>
