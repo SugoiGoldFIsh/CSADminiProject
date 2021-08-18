@@ -1,3 +1,5 @@
+
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +37,11 @@
         <li class="active"><a href="about.php">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <?php  if (isset($_SESSION['username'])) : ?>
+            <li> <a href="profile.php"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['username']; ?> </a></li>
+          <?php else: ?>
+            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <?php endif ?>
       </ul>
     </div>
   </div>
