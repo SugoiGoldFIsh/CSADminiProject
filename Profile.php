@@ -134,15 +134,15 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-          <li class="active"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="map.php">MRT Map</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="Rating.php">Rating</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <?php  if (isset($_SESSION['username'])) : ?>
-            <li> <a href="profile.php"><span class="glyphicon glyphicon-user" style="text-transform: capitalize;"> <?php echo $_SESSION['username']; ?> </a></li>
+            <li class="active"> <a href="profile.php"><span class="glyphicon glyphicon-user" style="text-transform: capitalize;"> <?php echo $_SESSION['username']; ?> </a></li>
           <?php else: ?>
             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <?php endif ?>
