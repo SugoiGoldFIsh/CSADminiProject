@@ -180,55 +180,52 @@
          async defer></script>
     </div>
     <div id="Side-Nav" class="col-sm-2 sidenav">
-        <div class="well" id="well">
-            <img id="MRTImage" src="ImageFolder/BlankImage.jpg" style =" height: auto; width: 100%" >
-            <br><br>
-          <ul id="unorderedlist">
-              <li>Latitude: <span id="lat"></span></li>
-              <li>Longitude: <span id="lon"></span> </li>
-          </ul>
-          <br>
-          <span id="dispSt"></span>
-          <span id="disp">Click on an MRT for arrival timing!</span>
-          <br>
+      <div class="well" id="well">
+        <img id="MRTImage" src="ImageFolder/BlankImage.jpg" style =" height: auto; width: 100%" >
+        <br><br>
+        <ul id="unorderedlist">
+          <li>Latitude: <span id="lat"></span></li>
+          <li>Longitude: <span id="lon"></span> </li>
+        </ul>
+        <br>
+        <span id="dispSt"></span>
+        <span id="disp">Click on an MRT for arrival timing!</span>
+        <br>
+        <?php  if (isset($_SESSION['username'])) : ?>
           <div class="Rating-container">
+            <form action="index.php" method="post">
               <div class="star-widget">
-                  <form action="index.php" method="post">
-                  <p id="RateUs" class="RateUs">Rate Our Website!</p>
-                  <input type="radio" name="rate" id="rate-5">
-                  <label for="rate-5" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-4">
-                  <label for="rate-4" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-3">
-                  <label for="rate-3" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-2">
-                  <label for="rate-2" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-1">
-                  <label for="rate-1" class="fas fa-star"></label>
-                  <div id="Rating-form" class="Rating-form">
-                    <header></header>
-                  <div class="textarea">
+                <p id="RateUs" class="RateUs">Rate Our Website!</p>
+                <input type="radio" name="rate" id="rate-5">
+                <label for="rate-5" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-4">
+                <label for="rate-4" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-3">
+                <label for="rate-3" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-2">
+                <label for="rate-2" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-1">
+                <label for="rate-1" class="fas fa-star"></label>
+                <div id="Rating-form" class="Rating-form">
+                  <header></header>
+                  <div class="textarea"> 
                     <textarea cols="30" name="feedback" placeholder="Describe your experience.."></textarea>
                   </div>
                   <div class="Post-btn">
-                      <?php  if (isset($_SESSION['username'])) : ?>
-            <button type="submit" onclick="Thankfeedback()" name="feedback_submit">Post</button>
-            <?php else: ?>
-            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Please login to rate</a></li>
-          <?php endif ?>
-            <!-- <button type="submit" onclick="Thankfeedback()" name="feedback_submit">Post</button>-->
+                    <button type="submit" onclick="alert('Thank You For Your Feedback!');" name="feedback_submit">Post</button>
                   </div>
-                  </div>
-                </form>
+                </div>
               </div>
-            </div>
-          <script>
-              function Thankfeedback() {
-                  alert("Thank You For Your Feedback!");
-              }
-          </script>
-        </div>
+            </form>
+          </div>
+        <?php else: ?>
+          <li>
+            <a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Log in or sign up to submit ratings and feedback!</a>
+          </li>
+        <?php endif ?>
+      </div>
     </div>
+  </div>
 </div>
 </div>
 </body>
