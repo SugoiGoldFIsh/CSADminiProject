@@ -96,4 +96,41 @@ if (isset($_POST['feedback_submit'])) {
         unset($_SESSION['feedback']);
   	header("location: index.php");
   }
+  
+  
+  if (isset($_POST['rate1'])) {
+        $rate='1';
+        $username = $_SESSION['username'];
+  	$query_rating = "UPDATE users SET rating = '$rate' WHERE username='$username'";
+          mysqli_query($db, $query_rating);
+  	}
+
+  if (isset($_POST['rate2'])) {
+        $rate='2';
+        $username = $_SESSION['username'];
+  	$query_rating = "UPDATE users SET rating = '$rate' WHERE username='$username'";
+          mysqli_query($db, $query_rating);
+  	}
+        
+  if (isset($_POST['rate3'])) {
+        $rate='3';
+        $username = $_SESSION['username'];
+  	$query_rating = "UPDATE users SET rating = '$rate' WHERE username='$username'";
+          mysqli_query($db, $query_rating);
+  	}
+        
+  if (isset($_POST['rate4'])) {
+        $rate='4';
+        $username = $_SESSION['username'];
+  	$query_rating = "UPDATE users SET rating = '$rate' WHERE username='$username'";
+          mysqli_query($db, $query_rating);
+  	}
+        
+  if (isset($_POST['rate5'])) {
+        $rate='5';
+        $username = $_SESSION['username'];
+  	$query_rating = "UPDATE users SET rating = '$rate' WHERE username='$username'";
+          mysqli_query($db, $query_rating);
+  	}
+        
 ?>
