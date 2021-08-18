@@ -5,7 +5,7 @@ include ('server.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>MRT ARRIVAL TIME</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -135,11 +135,10 @@ include ('server.php');
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <?php  if (isset($_SESSION['username'])) : ?>
-            <li class="active"> <a href="profile.php"><span class="glyphicon glyphicon-user" style="text-transform: capitalize;"> <?php echo $_SESSION['username']; ?> </a></li>
+            <li class="active"> <a href="profile.php"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['username']; ?> </a></li>
           <?php else: ?>
             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <?php endif ?>
-        
       </ul>
     </div>
   </div>
