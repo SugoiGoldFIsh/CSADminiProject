@@ -155,7 +155,8 @@ include ('server.php');
     <tr><td class="data-label">Email:</td><td class="data-value"><?php echo $_SESSION['email']?></td></tr>
     <tr><td class="data-label">Previous&nbsp;Feedback:</td><td class="data-value"><?php echo $_SESSION['feedback']?></br></td></tr>
 </table>  
-   <p style="color: red; text-align: left; background: transparent; border: 2px solid #B0C4DE; width: 5%; font-weight:Bold ;"><a href="index.php?logout='1'">logout</a> </p>
+        
+        <p style="text-align: left; margin-top: 1em;"> <span style="color: red;  padding:0.1em; background: transparent; border: 2px solid #B0C4DE; font-weight:Bold ;"><a href="index.php?logout='1'">Log out</a> </span></p>
 </div>
 
 <footer class="container-fluid text-center">
