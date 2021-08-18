@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-        <img class="navbar-brand" src="Logo.jpg">
+        <img class="navbar-brand" src="ImageFolder/Logo.png">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
