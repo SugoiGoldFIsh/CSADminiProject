@@ -69,11 +69,12 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
+          $values = mysqli_fetch_array($results);
   	  $_SESSION['username'] = $username;
-          $_SESSION['email'] = mysqli_fetch_array($results)['email'];
-          $_SESSION['feedback'] = mysqli_fetch_array($results)['feedback'];
+          $_SESSION['email'] = $values['email'];
+          $_SESSION['feedback'] = $values['feedback'];
   	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
+  	  //header('location: index.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}
