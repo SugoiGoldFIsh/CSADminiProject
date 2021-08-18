@@ -78,3 +78,12 @@ table.profile, table.profile td{
     text-align: center;
     
 }
+table.profile td {
+  padding: 0.5em;
+}
+table.profile .data-label {
+  text-align: right;
+}
+table.profile .data-value {
+  text-align: left;
+}
