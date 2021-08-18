@@ -135,7 +135,7 @@ include ('server.php');
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <?php  if (isset($_SESSION['username'])) : ?>
-            <li> <a href="profile.php"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['username']; ?> </a></li>
+            <li class="active"> <a href="profile.php"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['username']; ?> </a></li>
           <?php else: ?>
             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <?php endif ?>
