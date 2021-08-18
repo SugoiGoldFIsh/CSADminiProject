@@ -53,6 +53,12 @@
   
     <div class="container-fluid text-center">
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <script>
+        function openNav(){
+            document.getElementById("middle").style.width = "80%";
+            document.getElementById("Side-Nav").style.width= "20%";
+        }
+    </script>
   <div class="row content">
     <div id="middle" class="col-sm-8"> 
         <div id="map"></div>
@@ -104,7 +110,6 @@
                             document.getElementById("MRTImage").src="ImageFolder/DoverMRT.jpg";
                         } else {
                             disp.textContent = "Click on an MRT station for arrival timing!";
-                            document.getElementById("MRTImage").src="ImageFolder/BlankImage.jpg";
                         }
                         lat.textContent = Latitude;
                         lon.textContent = Longitude;
@@ -159,6 +164,11 @@
                           });
                           map.fitBounds(bounds);
                         });
+                        /*var SideNavBtn = document.createElement("Button");
+                        SideNavBtn.id = "Side-Nav-Button";
+                        SideNavBtn.onclick = "openNav()";
+                        SideNavBtn.value = "Open Sidebar";
+                        map.appendChild(SideNavBtn);*/
                       }
                        </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8bbmButzgqA9hMwj5jh-nCkg9usIURFg&amp;libraries=places&amp;callback=initAutocomplete"
@@ -166,7 +176,7 @@
     </div>
     <div id="Side-Nav" class="col-sm-2 sidenav">
         <div class="well" id="well">
-            <img id="MRTImage" src="ImageFolder/BlankImage.jpg" style =" height: auto; width: 100%" >
+          <img id="MRTImage" src="BlankImage.jpg" style =" height: auto; width: 100%" >
           <br><br>
           <ul id="unorderedlist">
               <li>Latitude: <span id="lat"></span></li>
