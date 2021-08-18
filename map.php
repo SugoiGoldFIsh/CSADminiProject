@@ -48,10 +48,9 @@
 </nav>
   
     <div class="container-fluid text-center">
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div class="row content">
     <div id="middle" class="col-sm-8"> 
-        <iframe id="map" style="width:100%; height:100%" src="https://angyongen.github.io/Singapore-MRT-Network/"></div>
+        <iframe id="map" style="width:100%; height:100%; border:none;" src="https://angyongen.github.io/Singapore-MRT-Network/"></div>
     </div>
     <div id="Side-Nav" class="col-sm-2 sidenav">
     </div>
