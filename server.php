@@ -50,6 +50,8 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
+    $_SESSION['email'] = $email;
+    $_SESSION['feedback'] = "";
   	header('location: index.php');
   }
 }
