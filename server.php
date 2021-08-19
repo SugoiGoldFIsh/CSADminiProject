@@ -103,7 +103,7 @@ if (isset($_POST['feedback_submit'])) {
   if (isset($_POST['update'])) {
         $username = $_SESSION['username'];
         $query_update = "SELECT * FROM users WHERE username='$username'";
-  	$results = mysqli_query($db, $query);
+  	$results = mysqli_query($db, $query_update);
         $values = mysqli_fetch_array($results);
         $password1=$values['password'];
         $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
