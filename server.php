@@ -85,6 +85,7 @@ if (isset($_POST['feedback_submit'])) {
         $username = $_SESSION['username'];
   	$query_feedback = "UPDATE users SET feedback = '$feedback' WHERE username='$username'";
           mysqli_query($db, $query_feedback);
+          $_SESSION['feedback'] = $feedback;
   	} else {
   		//array_push($errors, "Please login");
 }
