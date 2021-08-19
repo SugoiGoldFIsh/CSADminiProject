@@ -111,7 +111,7 @@ if (isset($_POST['feedback_submit'])) {
     if ($password_1 != $password1) {
       array_push($errors, "The two passwords do not match");
     } else {
-      $sql = "UPDATE users SET password='$password_2' WHERE name='$name'";
+      $sql = "UPDATE users SET password='$password_2' WHERE username='$username'";
       mysqli_query($db, $sql);
       $_SESSION['message'] = "passsword Updated";
       header('location: index.php');
