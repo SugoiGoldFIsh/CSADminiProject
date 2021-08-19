@@ -101,25 +101,22 @@ if (isset($_POST['feedback_submit'])) {
   }
   
   if (isset($_POST['update'])) {
-        $username = $_SESSION['username'];
-        $query_update = "SELECT * FROM users WHERE username='$username'";
-        $results = mysqli_query($db, $query_update);
-        $values = mysqli_fetch_array($results);
-        $password1=$values['password'];
-        $password_1 = md5(mysqli_real_escape_string($db, $_POST['password_1']));
-        $password_2 = md5(mysqli_real_escape_string($db, $_POST['password_2']));
-         if ($password_1 != $password1) {
-	array_push($errors, "The two passwords do not match");
+    $username = $_SESSION['username'];
+    $query_update = "SELECT * FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $query_update);
+    $values = mysqli_fetch_array($results);
+    $password1=$values['password'];
+    $password_1 = md5(mysqli_real_escape_string($db, $_POST['password_1']));
+    $password_2 = md5(mysqli_real_escape_string($db, $_POST['password_2']));
+    if ($password_1 != $password1) {
+      array_push($errors, "The two passwords do not match");
+    } else {
+      $sql = "UPDATE users SET password='$password_2' WHERE name='$name'";
+      mysqli_query($db, $sql);
+      $_SESSION['message'] = "passsword Updated";
+      header('location: index.php');
+    }
   }
-         if ($password_1 == $password1) {
-	 $sql = "UPDATE info SET password='$password_2' WHERE name='$name'";
-         mysqli_query($db, $sql);
-         $_SESSION['message'] = "passsword Updated";
-         header('location: index.php');
-  }
-       
-         
-}
   
   if (isset($_POST['rate1'])) {
         $rate='1';
