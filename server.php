@@ -100,7 +100,7 @@ if (isset($_POST['feedback_submit'])) {
   	header("location: index.php");
   }
   
-  if (isset($_GET['update'])) {
+  if (isset($_POST['update'])) {
         $username = $_SESSION['username'];
         $query_update = "SELECT * FROM users WHERE username='$username'";
   	$results = mysqli_query($db, $query);
